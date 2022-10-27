@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 3px black;
-    width: 20rem;
+    max-width: 20rem;
     margin: auto;
     padding: 1rem 1.5rem;
     -webkit-border-radius: 3px;
@@ -28,6 +28,7 @@
     width: 100%;
     border: none;
     box-shadow: 0px 1px 0px rgba(56, 56, 56, 0.493);
+    outline: none;
 }
 
 #task {
@@ -38,7 +39,7 @@
     background-color: black;
     color: white;
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.4rem 0.8rem;
     display: block;
     width: fit-content;
     -webkit-border-radius: 3px;
@@ -51,11 +52,31 @@
 .add_btn {
     background-color: rgb(16 180 197);
     border: none;
-    padding: 0.4rem;
+    padding: 0.4rem 0.8rem;
     color: white;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.task_list {
+    padding: 0;
+}
+
+.task_list-item {
+    border: 1px solid rgb(250, 212, 142);
+    list-style: none;
+    margin-bottom: 2px;
+    padding: 0.3rem;
+    font-weight: 600;
+}
+
+.delete_btn {
+    border: 2px solid black;
+    padding: 0.3rem;
+    float: right;
+
 }
