@@ -12,7 +12,10 @@ const clearBtn = document.querySelector('.clear_btn');
 loadAllEventlisteners();
 
 function loadAllEventlisteners () {
-    taskForm.addEventListener('submit', addTask)
+    taskForm.addEventListener('submit', addTask);
+    taskList.addEventListener('click', removeTask);
+    clearBtn.addEventListener('click', clearTasks)
+    filterInput.addEventListener('keyup', filterTask)
 }
 
 //add task function
@@ -30,9 +33,37 @@ function addTask (e) {
     const link = document.createElement('a');
     link.className = 'remove_btn';
     link.innerHTML = '<i class="fa fa-remove delete_btn"></i>';
-    li.appendChild(link)
+    li.appendChild(link);
     taskList.appendChild(li);
     taskInput.value = '';
     }
     e.preventDefault();
+}
+
+function removeTask (e) {
+    if (e.target.parentElement.classList.contains('remove_btn')) {
+        if (confirm('Are you sure')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+}
+
+function clearTasks (e) {
+    while(taskList.firstChild) {
+        taskList.removeChild(taskList.firstChild);
+    }
+}
+
+function filterTask (e) {
+    var text = e.target.value.toLowerCase();
+    document.querySelectorAll('.task_list-item').forEach(function (task) {
+        const item = task.firstChild.textContent;
+        if (item.toLowerCase().indexOf(text) != -1) {
+            task.style.display = 'block';
+        }else{
+            task.style.display = 'none';
+        }
+        console.log(task)
+    });
+
 }
