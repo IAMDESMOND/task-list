@@ -4,6 +4,10 @@
     font-size: 16px;
 }
 
+body {
+    background: rgba(238, 226, 187, 0.514);
+}
+
 .main_container {
     display: flex;
     flex-direction: column;
@@ -16,6 +20,7 @@
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
     border-radius: 3px;
+    background: white;   
 }
 
 .task_form,
